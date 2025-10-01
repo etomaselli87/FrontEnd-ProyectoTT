@@ -11,25 +11,20 @@ html {
   font-size: 62.5%;
 }
 
-@media (min-width: 600px) {
-  body {
-    color: #26704f;
-    font-family: 'Encode Sans Condensed', bolder;
-    font-size: 1.6rem;
-    font-weight: 5rem;
-    line-height: bolder;
 
-    background-image: radial-gradient(circle,rgba(242, 194, 215, 0.75) 0%, rgba(186, 148, 233, 0.75) 100%);
+body {
+  color: #26704f;
+  font-family: 'Encode Sans Condensed', bolder;
+  font-size: 1.6rem;
+  font-weight: 5rem;
+  line-height: bolder;
 
-    display: flex;
-    flex-direction: column;
+  background-image: radial-gradient(circle,rgba(242, 194, 215, 0.75) 0%, rgba(186, 148, 233, 0.75) 100%);
 
-    min-height: 100vh;
-  }
-}
+  display: flex;
+  flex-direction: column;
 
-p {
-  text-align: center;
+  min-height: 100vh;
 }
 
 .header {
@@ -319,31 +314,101 @@ main .parrafo-home {
 
 
 
-
-
 /* -------------------------------------------------------------------------- */
 /*                                  RESPONSIVE                                */
 /* -------------------------------------------------------------------------- */
 
-@media (min-width: 600px) {
+/* Para pantallas menores a 600px */
+@media (max-width: 600px) {
+  /* HEADER */
+  .header {
+    flex-direction: column; /* Logo arriba, menú abajo */
+    text-align: center;
+    padding: 1rem;
+  }
 
   .header__logo {
-    background: rgb(114, 50, 109);
-    background: linear-gradient(0deg,rgba(100, 9, 105, 0.9) 10%, rgba(186, 138, 189, 1) 100%, rgba(181, 159, 181, 1) 100%);
-    background-size: cover;
-    display:auto;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1rem;
+    margin: 0;
+    font-size: 2.5rem; /* achicamos logo */
   }
 
-  .header__nav {
-    background: rgb(114, 50, 109);
-    background: linear-gradient(0deg,rgba(100, 9, 105, 0.9) 10%, rgba(186, 138, 189, 1) 100%, rgba(181, 159, 181, 1) 100%);
-    background-size: cover;
-    display:auto;
-    justify-content: space-between;
+  .header__logo a {
+    font-size: 2.5rem; /* achicamos texto logo */
+    padding-left: 0;
+  }
+
+  .header__nav ul {
+    flex-direction: column; /* menú vertical */
+    gap: 1rem;
+  }
+
+  .header__nav li {
+    font-size: 2rem;
+  }
+
+  /* MAIN */
+  main h1 {
+    font-size: 3rem; /* título más chico */
+    text-align: center;
+  }
+
+  main p {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  main .parrafo-home {
+    width: 100%; /* que ocupe todo el ancho */
+    font-size: 1.6rem;
+  }
+
+  /* PRODUCTOS */
+  .contenedor-tarjetas {
+    flex-direction: column; /* tarjetas en columna */
     align-items: center;
-    font-size: 1rem;
+  }
+
+  .tarjeta-producto {
+    width: 90%; /* tarjetas más anchas pero adaptables */
+  }
+
+  .tarjeta-producto h3,
+  .tarjeta-producto p {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  /* CONTACTO */
+  .form {
+    width: 90%; /* formulario ocupa casi todo el ancho */
+    font-size: 1.8rem;
+  }
+
+  .campo-form label {
+    font-size: 1.6rem;
+  }
+
+  .campo-form input,
+  .campo-form textarea {
+    font-size: 1.4rem;
+  }
+
+  .form button {
+    font-size: 1.6rem;
+    padding: 0.8rem;
+  }
+
+  /* FOOTER */
+  .footer {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .footer nav ul {
+    flex-direction: row;
+    gap: 1rem;
   }
 }
+
+
